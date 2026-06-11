@@ -1,9 +1,9 @@
 ---
-name: dev-coding
+name: coding-plan-skills
 description: Structured development workflow library covering bug fixing, feature planning, and change documentation. Contains three commands: /fix-plan for structured debug interviews, /dev-plan for development planning before coding, and /dev-change for generating change logs after task completion. Use when fixing bugs, building features, or documenting completed work.
 ---
 
-# Dev Coding — Development Workflow Library
+# Coding Plan Skills — Development Workflow Library
 
 本技能库提供完整的开发工作流，覆盖 **修复问题 → 开发规划 → 变更归档** 三个环节。
 

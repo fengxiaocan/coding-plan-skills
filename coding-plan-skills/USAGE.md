@@ -1,8 +1,8 @@
-# Dev Coding 使用文档
+# Coding Plan Skills 使用文档
 
 ## 用途
 
-`dev-coding` 是三个开发工作流技能的集合库，覆盖 **修复问题 → 开发规划 → 变更归档** 的完整开发链路。
+`coding-plan-skills` 是三个开发工作流技能的集合库，覆盖 **修复问题 → 开发规划 → 变更归档** 的完整开发链路。
 
 包含三个子命令：
 - `/fix-plan` — 调试访谈（修复 Bug）
@@ -117,7 +117,7 @@ AI:   生成 docs/CHANGELOG-YYYY-MM-DD.md
 ## 目录结构
 
 ```
-dev-coding/
+coding-plan-skills/
 ├── SKILL.md        ← 技能定义（入口）
 ├── USAGE.md        ← 本文档
 ├── fix-plan.md     ← /fix-plan 详细定义
