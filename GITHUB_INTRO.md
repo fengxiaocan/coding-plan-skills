@@ -6,7 +6,7 @@ A structured AI-assisted development workflow library for Claude Code. Enforces 
 
 ## Overview
 
-This repository contains three command-driven skills that form a complete development lifecycle:
+This repository contains three independent command-driven skills that form a complete development lifecycle:
 
 | Command | Purpose | Trigger |
 |---------|---------|---------|
@@ -84,14 +84,19 @@ After task completion, automatically generates:
 
 ## Installation
 
-Copy the skill directory into your Claude Code skills folder:
+Copy the desired skill directories into your Claude Code skills folder. Install only what you need, or all three:
 
 ```bash
 # Global skills
-~/.claude/skills/coding-plan-skills/
+~/.claude/skills/
 
 # Or project-level
-./.claude/skills/coding-plan-skills/
+./.claude/skills/
+```
+
+Example — install all three:
+```bash
+cp -r fix-plan dev-plan dev-change ~/.claude/skills/
 ```
 
 ---

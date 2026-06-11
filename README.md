@@ -18,9 +18,9 @@
 
 | Skill | 触发命令 | 用途 | 阶段/章节 |
 |-------|---------|------|----------|
-| [coding-plan-skills](coding-plan-skills/) | `/fix-plan` | 修复 Bug 时信息收集 | 7阶段 |
-| [coding-plan-skills](coding-plan-skills/) | `/dev-plan` | 新需求开发前规划 | 6阶段 |
-| [coding-plan-skills](coding-plan-skills/) | `/dev-change` | 任务完成后变更记录 | 10章节 |
+| [fix-plan](fix-plan/) | `/fix-plan` | 修复 Bug 时信息收集 | 7阶段 |
+| [dev-plan](dev-plan/) | `/dev-plan` | 新需求开发前规划 | 6阶段 |
+| [dev-change](dev-change/) | `/dev-change` | 任务完成后变更记录 | 10章节 |
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## 安装
 
-将 `coding-plan-skills/` 目录复制到 Claude Code 的 skills 目录：
+将需要的 skill 目录复制到 Claude Code 的 skills 目录：
 
 ```bash
 # Claude Code skills 目录（全局）
@@ -43,6 +43,12 @@
 
 # 或项目级 skills 目录
 ./.claude/skills/
+```
+
+可以只安装需要的 skill，也可以三个全部安装：
+
+```bash
+cp -r fix-plan dev-plan dev-change ~/.claude/skills/
 ```
 
 ---
@@ -65,12 +71,15 @@
 skills/
 ├── README.md                 # 本文档
 ├── GITHUB_INTRO.md           # GitHub 英文简介
-└── coding-plan-skills/
-    ├── SKILL.md              # 技能定义（入口）
-    ├── USAGE.md              # 使用文档
-    ├── fix-plan.md           # /fix-plan 修复流程详情
-    ├── dev-plan.md           # /dev-plan 规划流程详情
-    └── dev-change.md         # /dev-change 变更记录详情
+├── fix-plan/
+│   ├── SKILL.md              # 技能定义
+│   └── USAGE.md              # 使用文档
+├── dev-plan/
+│   ├── SKILL.md              # 技能定义
+│   └── USAGE.md              # 使用文档
+└── dev-change/
+    ├── SKILL.md              # 技能定义
+    └── USAGE.md              # 使用文档
 ```
 
 ---
