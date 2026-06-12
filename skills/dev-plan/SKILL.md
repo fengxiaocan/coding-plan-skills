@@ -1,6 +1,6 @@
 ---
 name: dev-plan
-description: Development planning workflow for new features and requirements. Use when the user asks to implement a feature, build something new, add functionality, or start a development task. Requires structured requirement gathering and planning before any code is written. Triggered by /dev-plan command.
+description: 面向新功能与新需求的开发规划流程。当用户要求实现某个功能、构建新模块、添加能力或启动开发任务时使用。在编写任何代码前，需先进行结构化的需求收集与规划。由 /dev-plan 命令触发。
 ---
 
 # Dev Plan — Development Planning

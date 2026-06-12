@@ -1,6 +1,6 @@
 ---
 name: fix-plan
-description: Structured debug interview workflow for bug fixes and fault investigation. Use when the user asks to fix a bug, investigate an error, diagnose a crash, or resolve a problem. Requires step-by-step information collection before any code changes are made. Triggered by /fix-plan command.
+description: 面向 Bug 修复与故障排查的结构化调试访谈流程。当用户要求修复 Bug、调查错误、诊断崩溃或解决问题时使用。在进行任何代码修改前，需按步骤收集信息。由 /fix-plan 命令触发。
 ---
 
 # Fix Plan — Debug Interview

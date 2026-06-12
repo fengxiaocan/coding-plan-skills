@@ -1,6 +1,6 @@
 ---
 name: dev-change
-description: Generate a development change log document after a task is completed. Use when the user asks to summarize changes, write a CHANGELOG, or after finishing any development task to document what was modified. Triggered by /dev-change command.
+description: 任务完成后生成开发变更记录文档。当用户要求总结变更、编写 CHANGELOG，或在任意开发任务结束后记录修改内容时使用。由 /dev-change 命令触发。
 ---
 
 # Dev Change — Development Change Log
