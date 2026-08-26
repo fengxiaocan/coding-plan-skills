@@ -1,16 +1,17 @@
 # Skills 开发工作流库
 
-本项目是一组结构化开发工作流技能，用于规范 AI 辅助开发过程，覆盖 **问题修复 → 需求规划 → 代码理解 → 变更归档** 完整链路。
+本项目是一组结构化开发工作流技能，用于规范 AI 辅助开发过程，覆盖 **问题修复 → 需求规划 → 代码理解 → 变更归档 → 提交推送** 完整链路。
 
 ---
 
 ## 工作流概览
 
 ```
-[发现问题]    ── /fix-plan   ──→ 信息收集 → 分析 → 修复
+[发现问题]    ── /dev-fix    ──→ 信息收集 → 分析 → 修复
 [新需求]      ── /dev-plan   ──→ 需求采访 → 计划 → 开发
 [代码理解]    ── /dev-analysis ─→ 阅读代码 → 生成文档
-[任务完成]    ── /dev-change ──→ 生成 CHANGELOG → 归档
+[变更记录]    ── /dev-change ──→ 生成 CHANGELOG → 归档
+[提交推送]    ── /dev-commit ──→ 暂存 → 规范提交 → 安全推送
 ```
 
 ---
@@ -19,10 +20,11 @@
 
 | Skill | 触发命令 | 用途 | 阶段/章节 |
 |-------|---------|------|----------|
-| [fix-plan](skills/fix-plan/) | `/fix-plan` | 修复 Bug 时信息收集 | 7阶段 |
+| [dev-fix](skills/dev-fix/) | `/dev-fix` | 修复 Bug 时信息收集 | 7阶段 |
 | [dev-plan](skills/dev-plan/) | `/dev-plan` | 新需求开发前规划 | 6阶段 |
 | [dev-analysis](skills/dev-analysis/) | `/dev-analysis` | 已有代码功能分析与文档沉淀 | 3阶段 |
 | [dev-change](skills/dev-change/) | `/dev-change` | 任务完成后变更记录 | 10章节 |
+| [dev-commit](skills/dev-commit/) | `/dev-commit` | 自动暂存、规范提交并安全推送 | 5阶段 |
 
 ---
 
@@ -32,6 +34,7 @@
 2. **逐步确认**：每阶段结束需用户确认后才能进入下一阶段
 3. **诚实记录**：禁止编造验证结果，未验证内容必须标记
 4. **渐进式提问**：每轮最多 2~3 个问题，逐步推进
+5. **安全提交推送**：规范化提交信息，杜绝强推破坏代码历史
 
 ---
 
@@ -50,7 +53,7 @@
 可以只安装需要的 skill，也可以全部安装：
 
 ```bash
-cp -r fix-plan dev-plan dev-analysis dev-change ~/.claude/skills/
+cp -r dev-fix dev-plan dev-analysis dev-change dev-commit ~/.claude/skills/
 ```
 
 ---
@@ -60,10 +63,11 @@ cp -r fix-plan dev-plan dev-analysis dev-change ~/.claude/skills/
 在对话中输入对应命令触发：
 
 ```
-/fix-plan      # 开始修复问题的信息收集流程
+/dev-fix      # 开始修复问题的信息收集流程
 /dev-plan      # 开始新需求的规划流程
 /dev-analysis  # 开始分析已有功能并生成功能文档
 /dev-change    # 生成本次变更的 CHANGELOG
+/dev-commit    # 自动暂存、生成规范 Commit 并安全推送
 ```
 
 ---
@@ -74,7 +78,7 @@ cp -r fix-plan dev-plan dev-analysis dev-change ~/.claude/skills/
 skills/
 ├── README.md                 # 本文档
 ├── GITHUB_INTRO.md           # GitHub 英文简介
-├── fix-plan/
+├── dev-fix/
 │   ├── SKILL.md              # 技能定义
 │   ├── README.md             # 快速入口
 │   └── USAGE.md              # 使用文档
@@ -87,7 +91,11 @@ skills/
 │   ├── README.md             # 快速入口
 │   ├── USAGE.md              # 使用文档
 │   └── TEMPLATE.md           # 文档模板
-└── dev-change/
+├── dev-change/
+│   ├── SKILL.md              # 技能定义
+│   ├── README.md             # 快速入口
+│   └── USAGE.md              # 使用文档
+└── dev-commit/
     ├── SKILL.md              # 技能定义
     ├── README.md             # 快速入口
     └── USAGE.md              # 使用文档
