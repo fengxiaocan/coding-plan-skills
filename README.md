@@ -10,6 +10,7 @@
 [发现问题]    ── /dev-fix    ──→ 信息收集 → 分析 → 修复
 [新需求]      ── /dev-plan   ──→ 需求采访 → 计划 → 开发
 [代码理解]    ── /dev-analysis ─→ 阅读代码 → 生成文档
+[逆向反编译]  ── /dev-decompile ─→ 指纹识别 → 反编译 → 接口与架构沉淀
 [变更记录]    ── /dev-change ──→ 生成 CHANGELOG → 归档
 [提交推送]    ── /dev-commit ──→ 暂存 → 规范提交 → 安全推送
 ```
@@ -23,6 +24,7 @@
 | [dev-fix](skills/dev-fix/) | `/dev-fix` | 修复 Bug 时信息收集 | 7阶段 |
 | [dev-plan](skills/dev-plan/) | `/dev-plan` | 新需求开发前规划 | 6阶段 |
 | [dev-analysis](skills/dev-analysis/) | `/dev-analysis` | 已有代码功能分析与文档沉淀 | 3阶段 |
+| [dev-decompile](skills/dev-decompile/) | `/dev-decompile` | 安装包与库反编译、架构分析与接口提取 | 7阶段 |
 | [dev-change](skills/dev-change/) | `/dev-change` | 任务完成后变更记录 | 10章节 |
 | [dev-commit](skills/dev-commit/) | `/dev-commit` | 自动暂存、规范提交并安全推送 | 5阶段 |
 
@@ -53,7 +55,7 @@
 可以只安装需要的 skill，也可以全部安装：
 
 ```bash
-cp -r dev-fix dev-plan dev-analysis dev-change dev-commit ~/.claude/skills/
+cp -r dev-fix dev-plan dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
 ```
 
 ---
@@ -63,11 +65,12 @@ cp -r dev-fix dev-plan dev-analysis dev-change dev-commit ~/.claude/skills/
 在对话中输入对应命令触发：
 
 ```
-/dev-fix      # 开始修复问题的信息收集流程
-/dev-plan      # 开始新需求的规划流程
-/dev-analysis  # 开始分析已有功能并生成功能文档
-/dev-change    # 生成本次变更的 CHANGELOG
-/dev-commit    # 自动暂存、生成规范 Commit 并安全推送
+/dev-fix        # 开始修复问题的信息收集流程
+/dev-plan       # 开始新需求的规划流程
+/dev-analysis   # 开始分析已有功能并生成功能文档
+/dev-decompile  # 开始安装包/依赖库反编译与逆向分析
+/dev-change     # 生成本次变更的 CHANGELOG
+/dev-commit     # 自动暂存、生成规范 Commit 并安全推送
 ```
 
 ---
@@ -91,6 +94,13 @@ skills/
 │   ├── README.md             # 快速入口
 │   ├── USAGE.md              # 使用文档
 │   └── TEMPLATE.md           # 文档模板
+├── dev-decompile/
+│   ├── SKILL.md              # 技能定义
+│   ├── README.md             # 快速入口
+│   ├── USAGE.md              # 使用文档
+│   ├── TEMPLATE.md           # 文档模板
+│   ├── scripts/              # 跨平台逆向工具脚本
+│   └── references/           # 逆向参考手册与规则库
 ├── dev-change/
 │   ├── SKILL.md              # 技能定义
 │   ├── README.md             # 快速入口

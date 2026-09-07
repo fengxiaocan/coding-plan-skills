@@ -13,6 +13,7 @@ This repository contains command-driven skills that form a complete development 
 | `/dev-fix` | Structured bug investigation & debugging | When fixing bugs, crashes, or errors |
 | `/dev-plan` | Development planning before coding | When building new features |
 | `/dev-analysis` | Code comprehension & architecture documentation | When understanding or documenting code |
+| `/dev-decompile`| APK/library decompilation, API extraction & reverse engineering | When decompiling or reverse engineering Android apps/libraries |
 | `/dev-change` | Automated changelog generation | When a task is completed |
 | `/dev-commit` | Auto stage, conventional commit & safe push | When committing and pushing changes |
 
@@ -32,11 +33,12 @@ Most AI coding assistants jump straight to writing code based on vague descripti
 These skills enforce a structured workflow:
 
 ```
-[Bug Report]      ── /dev-fix      ──→  Interview → Evidence → Analysis → Fix
-[Feature Request] ── /dev-plan     ──→  Interview → Plan → Acceptance → Code
-[Code Analysis]   ── /dev-analysis ──→  Read Code → Flow Analysis → Doc
-[Task Done]       ── /dev-change   ──→  Auto-generated CHANGELOG
-[Commit & Push]   ── /dev-commit   ──→  Stage → Conventional Commit → Safe Push
+[Bug Report]      ── /dev-fix        ──→  Interview → Evidence → Analysis → Fix
+[Feature Request] ── /dev-plan       ──→  Interview → Plan → Acceptance → Code
+[Code Analysis]   ── /dev-analysis   ──→  Read Code → Flow Analysis → Doc
+[Decompile]       ── /dev-decompile  ──→  Fingerprint → Multi-engine Decompile → API & Flow Doc
+[Task Done]       ── /dev-change     ──→  Auto-generated CHANGELOG
+[Commit & Push]   ── /dev-commit     ──→  Stage → Conventional Commit → Safe Push
 ```
 
 ---
@@ -67,6 +69,28 @@ Before building anything, the AI must:
 6. Deliver a completion report
 
 **Constraint:** Maximum 2-3 questions per turn. No skipping stages.
+
+### `/dev-analysis` — Code Analysis & Documentation (3 Phases)
+
+Before generating documentation, the AI must:
+1. Confirm analysis goals, module scope, and target output path
+2. Read code to analyze structure, call flow, data flow, and dependencies
+3. Generate structured documentation according to template
+
+**Output:** `docs/{module}/README.md`
+
+### `/dev-decompile` — Decompilation & Reverse Engineering (7 Phases)
+
+Structured workflow for decompiling and analyzing Android APK/XAPK/JAR/AAR packages:
+1. Target verification & automated dependency check (Java 17+, jadx, vineflower)
+2. Triage & framework fingerprinting (Flutter/RN/Native triage, HTTP stacks, obfuscation level)
+3. Multi-engine decompilation (`jadx`, `vineflower`, or `both` comparison; automatic XAPK/Split APK handling)
+4. Architecture & entry point analysis (AndroidManifest, BuildConfig constant leaks)
+5. Kotlin obfuscation recovery (`@DebugMetadata` mining to restore original class names) & call flow tracing
+6. API endpoint extraction (Retrofit, OkHttp, Ktor, Apollo, URLs) & security credential auditing
+7. Report delivery & documentation archiving
+
+**Output:** `docs/decompile/{app-name}/README.md` & `API_INVENTORY.md`
 
 ### `/dev-change` — Change Log (10 Sections)
 
