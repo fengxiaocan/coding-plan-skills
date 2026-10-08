@@ -12,6 +12,7 @@ This repository contains command-driven skills that form a complete development 
 |---------|---------|---------|
 | `/dev-fix` | Structured bug investigation & debugging | When fixing bugs, crashes, or errors |
 | `/dev-plan` | Development planning before coding | When building new features |
+| `/dev-android-design` | Unified Android UI/UX design system & Compose styling | When designing/implementing/refactoring Android UI |
 | `/dev-analysis` | Code comprehension & architecture documentation | When understanding or documenting code |
 | `/dev-decompile`| APK/library decompilation, API extraction & reverse engineering | When decompiling or reverse engineering Android apps/libraries |
 | `/dev-change` | Automated changelog generation | When a task is completed |
@@ -28,17 +29,19 @@ Most AI coding assistants jump straight to writing code based on vague descripti
 - Wrong assumptions and wasted effort
 - Fixes that don't address the root cause
 - Missing edge cases and compatibility issues
+- Fragmented UI with magic numbers and broken layouts
 - Undocumented changes that are hard to trace later
 
 These skills enforce a structured workflow:
 
 ```
-[Bug Report]      ── /dev-fix        ──→  Interview → Evidence → Analysis → Fix
-[Feature Request] ── /dev-plan       ──→  Interview → Plan → Acceptance → Code
-[Code Analysis]   ── /dev-analysis   ──→  Read Code → Flow Analysis → Doc
-[Decompile]       ── /dev-decompile  ──→  Fingerprint → Multi-engine Decompile → API & Flow Doc
-[Task Done]       ── /dev-change     ──→  Auto-generated CHANGELOG
-[Commit & Push]   ── /dev-commit     ──→  Stage → Conventional Commit → Safe Push
+[Bug Report]      ── /dev-fix            ──→  Interview → Evidence → Analysis → Fix
+[Feature Request] ── /dev-plan           ──→  Interview → Plan → Acceptance → Code
+[UI/UX Design]    ── /dev-android-design ──→  Scan Tokens → Architecture → Strict Tokens → Responsive → Review
+[Code Analysis]   ── /dev-analysis       ──→  Read Code → Flow Analysis → Doc
+[Decompile]       ── /dev-decompile      ──→  Fingerprint → Multi-engine Decompile → API & Flow Doc
+[Task Done]       ── /dev-change         ──→  Auto-generated CHANGELOG
+[Commit & Push]   ── /dev-commit         ──→  Stage → Conventional Commit → Safe Push
 ```
 
 ---
@@ -69,6 +72,17 @@ Before building anything, the AI must:
 6. Deliver a completion report
 
 **Constraint:** Maximum 2-3 questions per turn. No skipping stages.
+
+### `/dev-android-design` — Android Unified UI/UX Design System (5 Phases)
+
+Enforces Google Stitch design language and unified Design System for Android Jetpack Compose / View apps:
+1. Scan & Inventory: Check existing Design Tokens (`Color`, `Typography`, `Shape`, `Dimensions`) and shared component library (`AppButton`, `AppCard`, `AppListItem`, `AppDialog`, etc.)
+2. Audit & Architecture: Establish clear information hierarchy (Title → Core Info → Primary Action → Secondary Sections) and block ad-hoc custom component creation
+3. Strict Implementation: Zero magic numbers; 4dp grid system; 48dp touch targets; uniform button heights (52/48/36dp); no button text wrapping; semantic theme colors
+4. Responsiveness & Resilience: Defend against 320dp small screens, 130%~150% system font scaling, large tablets (max content width 600~840dp), and Dark Mode
+5. UI Review Checklist: Deliver structured audit across visual consistency, buttons, layout resilience, feedback dialogs, and accessibility
+
+**Core Rule:** UI screens assemble components; Design System decides what components look like.
 
 ### `/dev-analysis` — Code Analysis & Documentation (3 Phases)
 
@@ -135,7 +149,7 @@ Copy the desired skill directories into your Claude Code skills folder. Install 
 
 Example — install all skills:
 ```bash
-cp -r dev-fix dev-plan dev-analysis dev-change dev-commit ~/.claude/skills/
+cp -r dev-fix dev-plan dev-android-design dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
 ```
 
 ---
