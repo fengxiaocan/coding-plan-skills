@@ -1,6 +1,6 @@
 # Android UI 设计系统对齐与交付核对模板
 
-本模板用于在使用 `dev-android-design` 完成 Android 页面创建、重构、组件封装或视觉审查后，生成规范化的交付报告与核对清单。
+本模板用于在使用 `dev-android-unified-design` 完成 Android 页面创建、重构、组件封装或视觉审查后，生成规范化的交付报告与核对清单。
 
 ---
 

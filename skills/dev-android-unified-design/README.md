@@ -1,4 +1,4 @@
-# Dev Android Design — 现代 Android 统一设计系统工作流
+# Dev Android Unified Design — 现代 Android 统一设计系统工作流
 
 本 Skill 用于约束和指导 Android 项目的 UI/UX 设计与代码实现，整体设计风格参考 **Google Stitch** 现代移动端设计语言（简洁、清晰、高信息层级、适量留白、统一圆角、统一字体体系、统一组件高度、克制色彩与多屏幕自适应）。
 
@@ -12,21 +12,21 @@
 在 Claude Code / 智能助手对话中输入：
 
 ```
-/dev-android-design
+/dev-android-unified-design
 ```
 
 或附带具体页面/需求说明：
 
 ```
-/dev-android-design 创建一个个人中心与系统设置页面
+/dev-android-unified-design 创建一个个人中心与系统设置页面
 ```
 
 ```
-/dev-android-design 审查并重构当前 NetworkSpeedScreen 的 Compose 界面样式
+/dev-android-unified-design 审查并重构当前 NetworkSpeedScreen 的 Compose 界面样式
 ```
 
 ```
-/dev-android-design 搭建一套基础 Stitch 风格的 Design System 公共组件库
+/dev-android-unified-design 搭建一套基础 Stitch 风格的 Design System 公共组件库
 ```
 
 也可以通过自然语言触发：
@@ -62,7 +62,7 @@
 ## 文件结构
 
 ```text
-skills/dev-android-design/
+skills/dev-android-unified-design/
 ├── SKILL.md       # 技能核心定义（元数据、行为指令、硬性红线与 5 阶段工作流）
 ├── README.md      # 本文件：快速概览与入口说明
 ├── USAGE.md       # 使用文档：设计 Token 代码范例、核心组件封装、页面实战、对比与避坑指南

@@ -1,9 +1,9 @@
 ---
-name: dev-android-design
-description: 遵循 Google Stitch 现代设计风格与统一设计系统规范的 Android UI/UX 设计与实现工作流。当用户要求创建 Android 页面、重构 UI、封装公共组件、编写 Compose 界面、优化交互视觉或审查 Android 界面规范时使用。由 /dev-android-design 命令触发。
+name: dev-android-unified-design
+description: 遵循 Google Stitch 现代设计风格与统一设计系统规范的 Android UI/UX 设计与实现工作流。当用户要求创建 Android 页面、重构 UI、封装公共组件、编写 Compose 界面、优化交互视觉或审查 Android 界面规范时使用。由 /dev-android-unified-design 命令触发。
 ---
 
-# Dev Android Design — Unified UI/UX Design System Workflow
+# Dev Android Unified Design — Unified UI/UX Design System Workflow
 
 **核心法则：UI 页面负责“组合组件”，Design System 负责“决定组件长什么样”。业务页面严禁自行发明视觉样式。**
 
@@ -13,7 +13,7 @@ description: 遵循 Google Stitch 现代设计风格与统一设计系统规范�
 
 ## 激活时行为
 
-收到 `/dev-android-design` 或用户发起以下请求时触发：
+收到 `/dev-android-unified-design` 或用户发起以下请求时触发：
 - "创建/实现一个 Android 页面"
 - "重构/优化现有界面 UI"
 - "封装一套公共 Android UI 组件"

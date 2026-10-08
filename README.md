@@ -9,7 +9,8 @@
 ```
 [发现问题]    ── /dev-fix    ──→ 信息收集 → 分析 → 修复
 [新需求]      ── /dev-plan   ──→ 需求采访 → 计划 → 开发
-[UI/UX设计]   ── /dev-android-design ──→ 资产扫描 → 规划复用 → 规范实现 → 弹性校验 → 审查交付
+[统一UI设计]  ── /dev-unified-ui-design ──→ 资产扫描 → 规划复用 → 规范实现 → 弹性校验 → 审查交付
+[Android设计] ── /dev-android-unified-design ──→ 资产扫描 → 规划复用 → 规范实现 → 弹性校验 → 审查交付
 [代码理解]    ── /dev-analysis ─→ 阅读代码 → 生成文档
 [逆向反编译]  ── /dev-decompile ─→ 指纹识别 → 反编译 → 接口与架构沉淀
 [变更记录]    ── /dev-change ──→ 生成 CHANGELOG → 归档
@@ -24,7 +25,8 @@
 |-------|---------|------|----------|
 | [dev-fix](skills/dev-fix/) | `/dev-fix` | 修复 Bug 时信息收集 | 7阶段 |
 | [dev-plan](skills/dev-plan/) | `/dev-plan` | 新需求开发前规划 | 6阶段 |
-| [dev-android-design](skills/dev-android-design/) | `/dev-android-design` | 现代 Android 统一 UI/UX 设计系统与页面规范工作流 | 5阶段 |
+| [dev-unified-ui-design](skills/dev-unified-ui-design/) | `/dev-unified-ui-design` | 跨平台统一 UI/UX 设计系统与页面规范工作流 | 5阶段 |
+| [dev-android-unified-design](skills/dev-android-unified-design/) | `/dev-android-unified-design` | 现代 Android 统一 UI/UX 设计系统与页面规范工作流 | 5阶段 |
 | [dev-analysis](skills/dev-analysis/) | `/dev-analysis` | 已有代码功能分析与文档沉淀 | 3阶段 |
 | [dev-decompile](skills/dev-decompile/) | `/dev-decompile` | 安装包与库反编译、架构分析与接口提取 | 7阶段 |
 | [dev-change](skills/dev-change/) | `/dev-change` | 任务完成后变更记录 | 10章节 |
@@ -57,7 +59,7 @@
 可以只安装需要的 skill，也可以全部安装：
 
 ```bash
-cp -r dev-fix dev-plan dev-android-design dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
+cp -r dev-fix dev-plan dev-unified-ui-design dev-android-unified-design dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
 ```
 
 ---
@@ -67,13 +69,14 @@ cp -r dev-fix dev-plan dev-android-design dev-analysis dev-decompile dev-change 
 在对话中输入对应命令触发：
 
 ```
-/dev-fix            # 开始修复问题的信息收集流程
-/dev-plan           # 开始新需求的规划流程
-/dev-android-design # 开始 Android 统一 UI 设计系统与规范审查流程
-/dev-analysis       # 开始分析已有功能并生成功能文档
-/dev-decompile      # 开始安装包/依赖库反编译与逆向分析
-/dev-change         # 生成本次变更的 CHANGELOG
-/dev-commit         # 自动暂存、生成规范 Commit 并安全推送
+/dev-fix                    # 开始修复问题的信息收集流程
+/dev-plan                   # 开始新需求的规划流程
+/dev-unified-ui-design      # 开始跨平台统一 UI 设计系统与规范审查流程
+/dev-android-unified-design # 开始 Android 统一 UI 设计系统与规范审查流程
+/dev-analysis               # 开始分析已有功能并生成功能文档
+/dev-decompile              # 开始安装包/依赖库反编译与逆向分析
+/dev-change                 # 生成本次变更的 CHANGELOG
+/dev-commit                 # 自动暂存、生成规范 Commit 并安全推送
 ```
 
 ---
@@ -90,7 +93,12 @@ skills/
 ├── dev-plan/
 │   ├── SKILL.md              # 技能定义
 │   └── USAGE.md              # 使用文档
-├── dev-android-design/
+├── dev-unified-ui-design/
+│   ├── SKILL.md              # 技能定义
+│   ├── README.md             # 快速入口
+│   ├── USAGE.md              # 使用文档
+│   └── TEMPLATE.md           # 交付与核对模板
+├── dev-android-unified-design/
 │   ├── SKILL.md              # 技能定义
 │   ├── README.md             # 快速入口
 │   ├── USAGE.md              # 使用文档

@@ -1,8 +1,8 @@
-# Dev Android Design 使用指南
+# Dev Android Unified Design 使用指南
 
 ## 1. 概述与设计理念
 
-`dev-android-design` 是一套面向现代 Android（Jetpack Compose / View）开发的系统化 UI/UX 设计与落地规范工作流。其设计灵感来源于 **Google Stitch**：强调**简洁、纯粹、高信息层级、克制留白、统一度量衡、高度抗挤压与无障碍支持**。
+`dev-android-unified-design` 是一套面向现代 Android（Jetpack Compose / View）开发的系统化 UI/UX 设计与落地规范工作流。其设计灵感来源于 **Google Stitch**：强调**简洁、纯粹、高信息层级、克制留白、统一度量衡、高度抗挤压与无障碍支持**。
 
 ### 核心设计哲学
 - **组件分工明晰**：业务页面只负责“组合与装配”，设计系统（Design System）负责“决定外观与尺寸”。
@@ -15,19 +15,19 @@
 
 ### 命令行触发
 ```bash
-/dev-android-design
+/dev-android-unified-design
 ```
 
 ### 带目标描述的触发
 ```bash
 # 需求开发：创建规范化业务页面
-/dev-android-design 实现一个网络测速页面，包含当前测速仪表盘卡片、网络信息分组和开始测速主操作按钮
+/dev-android-unified-design 实现一个网络测速页面，包含当前测速仪表盘卡片、网络信息分组和开始测速主操作按钮
 
 # 代码重构：治理老旧混乱 UI
-/dev-android-design 重构 SettingScreen.kt，消除里面的裸写 dp/sp，将零散的 Card 合并为 Section 分组卡片
+/dev-android-unified-design 重构 SettingScreen.kt，消除里面的裸写 dp/sp，将零散的 Card 合并为 Section 分组卡片
 
 # 设计系统基建：搭建基础组件库
-/dev-android-design 为项目初始化一套符合 Stitch 规范的 Compose Design System 基础 Tokens 和常用公共组件
+/dev-android-unified-design 为项目初始化一套符合 Stitch 规范的 Compose Design System 基础 Tokens 和常用公共组件
 ```
 
 ---

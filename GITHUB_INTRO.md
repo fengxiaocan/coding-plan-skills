@@ -12,7 +12,8 @@ This repository contains command-driven skills that form a complete development 
 |---------|---------|---------|
 | `/dev-fix` | Structured bug investigation & debugging | When fixing bugs, crashes, or errors |
 | `/dev-plan` | Development planning before coding | When building new features |
-| `/dev-android-design` | Unified Android UI/UX design system & Compose styling | When designing/implementing/refactoring Android UI |
+| `/dev-unified-ui-design` | Cross-platform unified UI/UX design system & responsive styling | When designing/implementing/refactoring cross-platform UI |
+| `/dev-android-unified-design` | Unified Android UI/UX design system & Compose styling | When designing/implementing/refactoring Android UI |
 | `/dev-analysis` | Code comprehension & architecture documentation | When understanding or documenting code |
 | `/dev-decompile`| APK/library decompilation, API extraction & reverse engineering | When decompiling or reverse engineering Android apps/libraries |
 | `/dev-change` | Automated changelog generation | When a task is completed |
@@ -37,7 +38,8 @@ These skills enforce a structured workflow:
 ```
 [Bug Report]      ── /dev-fix            ──→  Interview → Evidence → Analysis → Fix
 [Feature Request] ── /dev-plan           ──→  Interview → Plan → Acceptance → Code
-[UI/UX Design]    ── /dev-android-design ──→  Scan Tokens → Architecture → Strict Tokens → Responsive → Review
+[Unified UI Design]── /dev-unified-ui-design ─→ Scan Tokens → Architecture → Strict Tokens → Responsive → Review
+[Android UI/UX]   ── /dev-android-unified-design ──→  Scan Tokens → Architecture → Strict Tokens → Responsive → Review
 [Code Analysis]   ── /dev-analysis       ──→  Read Code → Flow Analysis → Doc
 [Decompile]       ── /dev-decompile      ──→  Fingerprint → Multi-engine Decompile → API & Flow Doc
 [Task Done]       ── /dev-change         ──→  Auto-generated CHANGELOG
@@ -71,9 +73,18 @@ Before building anything, the AI must:
 5. Only then write code
 6. Deliver a completion report
 
-**Constraint:** Maximum 2-3 questions per turn. No skipping stages.
+### `/dev-unified-ui-design` — Cross-Platform Unified UI/UX Design System (5 Phases)
 
-### `/dev-android-design` — Android Unified UI/UX Design System (5 Phases)
+Enforces cross-platform design consistency across Web, Mobile (iOS/Android), Desktop, Flutter, React Native, and Compose Multiplatform:
+1. Scan & Inventory: Check existing Design Tokens (`Colors`, `Typography`, `Spacing`, `Radius`, `Size`, `Breakpoints`, `ZIndex`) and foundation components (`Button`, `Card`, `Dialog`, `ListItem`, `TextField`)
+2. Audit & Architecture: Establish strict information hierarchy (Header → Core Info Card → Primary Action → Section Groups) and eliminate fragmented, ad-hoc components
+3. Strict Implementation: Zero magic numbers; 4/8 grid system; uniform button heights (52/44/36px) with anti-wrap (`nowrap` / `maxLines = 1`); semantic colors & full Dark Mode support
+4. Edge Cases & Resilience: Defend against 320px small screens, 150% font scaling, ultrawide displays (max content width 1200~1440px / forms 640~840px), Safe Area, keyboard insets, and shrink priority (Icon → Flex Text → Action)
+5. Review Checklist & Delivery: Deliver structured audit across 8 dimensions and verify the 17-point final acceptance checklist
+
+**Core Rule:** UI screens assemble components; Design System decides what components look like.
+
+### `/dev-android-unified-design` — Android Unified UI/UX Design System (5 Phases)
 
 Enforces Google Stitch design language and unified Design System for Android Jetpack Compose / View apps:
 1. Scan & Inventory: Check existing Design Tokens (`Color`, `Typography`, `Shape`, `Dimensions`) and shared component library (`AppButton`, `AppCard`, `AppListItem`, `AppDialog`, etc.)
@@ -149,7 +160,7 @@ Copy the desired skill directories into your Claude Code skills folder. Install 
 
 Example — install all skills:
 ```bash
-cp -r dev-fix dev-plan dev-android-design dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
+cp -r dev-fix dev-plan dev-unified-ui-design dev-android-unified-design dev-analysis dev-decompile dev-change dev-commit ~/.claude/skills/
 ```
 
 ---
